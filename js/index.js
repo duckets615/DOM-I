@@ -52,11 +52,16 @@ navList.forEach((tag,idx) => {
 // CTA section //
 
 const ctaHeader = document.querySelector('.cta-text h1')
-ctaHeader.innerText = siteContent["cta"]["h1"]
+const formatHeader= siteContent['cta']['h1'].split(' ')
 
-// const btn = document.getElementsByTagName('button')
+ctaHeader.innerHTML = `${formatHeader[0]}<br>${formatHeader[1]}<br>${formatHeader[2]}`;
 document.querySelector('button').innerText = siteContent['cta']['button']
-// console.log(btn)
+
+const ctaImg = document.querySelector('#cta-img')
+ctaImg.src = siteContent.cta['img-src']
+//---------------------------
+
+  
 
 // const siteContent = {
 // "cta": {
