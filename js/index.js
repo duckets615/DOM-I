@@ -40,6 +40,10 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+//------------------------------------------
+
+// const sc = siteContent;
+
 
 // Navigation Sequence //
 const navList = document.querySelectorAll('nav a');
@@ -61,22 +65,28 @@ const ctaImg = document.querySelector('#cta-img')
 ctaImg.src = siteContent.cta['img-src']
 //---------------------------
 
-//  Main Content  //
-
+//   Main Content   //
+   //top-content//
 const header4 = document.querySelectorAll('.text-content h4')
-const topPara = document.querySelectorAll('.top-content p')
+const mainPara = document.querySelectorAll('.main-content p')
 const midImg = document.querySelector('.middle-img')
 
 header4[0].innerText = siteContent['main-content'][`features-h4`]
 header4[1].innerText = siteContent['main-content'][`about-h4`]
-topPara[0].innerText = siteContent['main-content']['features-content']
-topPara[1].innerText = siteContent['main-content']['about-content']
+mainPara[0].innerText = siteContent['main-content']['features-content']
+mainPara[1].innerText = siteContent['main-content']['about-content']
 document.querySelector('.middle-img').src = siteContent['main-content']['middle-img-src'];
 //---------------------------
+   //bottom-content//
 
+header4[2].innerText = siteContent['main-content']['services-h4'];
+header4[3].innterText = siteContent['main-content']['product-h4'];
+header4[4].innerText = siteContent['main-content']['vision-h4'];
+mainPara[2].innerText = siteContent['main-content'][`services-content`];
+mainPara[3].innerText = siteContent['main-content'][`product-content`];
+mainPara[4].innerText = siteContent['main-content'][`vision-content`];
 
-
-
+console.log(header4)
 // "main-content": {
 //   "features-h4":"Features",
 //   "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
