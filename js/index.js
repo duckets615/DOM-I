@@ -89,8 +89,11 @@ mainPara[4].innerText = siteContent['main-content'][`vision-content`];
 
 //  Contact   //
 document.querySelector('.contact h4').innerText = siteContent['contact']['contact-h4']
-document.querySelector('.contact p').innerHTML = `${siteContent['contact']['address']},<br>${siteContent['contact']['phone']},<br>${siteContent['contact']['email']}`
+document.querySelector('.contact p').innerHTML = `${siteContent['contact']['address']},<br>
+${siteContent['contact']['phone']},<br>${siteContent['contact']['email']}`
+//---------------------------
+//   foooter    //
 
-  // "footer": {
-    //   "copyright" : "Copyright Great Idea! 2018"
-    // }
+document.querySelector('footer p').innerText = siteContent['footer']['copyright']
+//---------------------------
+
