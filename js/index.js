@@ -61,14 +61,22 @@ const ctaImg = document.querySelector('#cta-img')
 ctaImg.src = siteContent.cta['img-src']
 //---------------------------
 
-  
+//  Main Content  //
 
-// const siteContent = {
-// "cta": {
-//   "h1": "DOM Is Awesome",
-//   "button": "Get Started",
-//   "img-src": "img/header-img.png"
-// },
+const header4 = document.querySelectorAll('.text-content h4')
+const topPara = document.querySelectorAll('.top-content p')
+const midImg = document.querySelector('.middle-img')
+
+header4[0].innerText = siteContent['main-content'][`features-h4`]
+header4[1].innerText = siteContent['main-content'][`about-h4`]
+topPara[0].innerText = siteContent['main-content']['features-content']
+topPara[1].innerText = siteContent['main-content']['about-content']
+document.querySelector('.middle-img').src = siteContent['main-content']['middle-img-src'];
+//---------------------------
+
+
+
+
 // "main-content": {
 //   "features-h4":"Features",
 //   "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
