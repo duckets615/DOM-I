@@ -9,11 +9,10 @@ msTens.innerText = 0
 msHundreds.innerText = 0
 
 
-setInterval(() => {
-    let addOne = +(seconds.innerText) + 1;    
-    if (+seconds.innerText < 11) seconds.innerText = addOne;
-}, 1000)
+function timer() {
+    if (+msHundreds.innerText === 9) msTens.innerText = +msTens.innerText + 1;
+    msHundreds.innerText = +msHundreds.innerText !== 9 ? +msHundreds.innerText + 1 : 0
+}
+setInterval(timer, 1000)
 
 
-// setInterval(seconds.innerText = +seconds.innerText + 1, 10)
-// setInterval(seconds.innerText = +seconds.innerText + 1, 10)
