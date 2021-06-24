@@ -1,3 +1,4 @@
+
 const siteContent = {
   "nav": {
     "nav-item-1": "Services",
@@ -41,8 +42,6 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 //------------------------------------------
-
-// const sc = siteContent;
 
 
 // Navigation Sequence //
@@ -96,4 +95,5 @@ ${siteContent['contact']['phone']},<br>${siteContent['contact']['email']}`
 
 document.querySelector('footer p').innerText = siteContent['footer']['copyright']
 //---------------------------
+
 
