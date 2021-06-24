@@ -1,8 +1,8 @@
-let tens = document.getElementById('secondTens');
-let seconds = document.getElementById('secondOnes');
-let tenths = document.getElementById('tenths');
-let hundreths = document.getElementById('hundreths');
-let digits = document.querySelectorAll('.digit');
+const tens = document.getElementById('secondTens');
+const seconds = document.getElementById('secondOnes');
+const tenths = document.getElementById('tenths');
+const hundreths = document.getElementById('hundreths');
+const digits = document.querySelectorAll('.digit');
 
 tens.innerText = 0;
 seconds.innerText = 0;
@@ -17,8 +17,7 @@ function timer() {
         digits.forEach(digit => digit.style.color = 'red');
         return tenths;
     };
-    
-  
+      
     if(+seconds.innerText === 1) digits.forEach(digit => digit.style.color = 'rgb(5, 70, 5)');
     if(+seconds.innerText === 2) digits.forEach(digit => digit.style.color = 'rgb(15, 121, 15)');
     if(+seconds.innerText === 3) digits.forEach(digit => digit.style.color = 'rgb(39, 138, 39)');
@@ -43,7 +42,7 @@ function timer() {
     
     hundreths.innerText = +hundreths.innerText === 9 ? 0 : +hundreths.innerText + 1;
 }
-setInterval(timer, 10)
 
+setInterval(timer, 10)
 
 
