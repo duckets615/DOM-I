@@ -2,13 +2,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
 }
 
 .digit {
   display: inline-block;
   font-size: 80px;
+  color: rgb(5,70,5);
 }
 
 .redDigit {
-  color: red;
+  color: rgb(218, 128, 26);
 }
