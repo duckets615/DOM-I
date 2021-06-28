@@ -8,15 +8,30 @@ const minuteBtn = document.querySelector('.minute');
 const secondBtn = document.querySelector('.second');
 const tenthsBtn = document.querySelector('.tenths');
 const hundredBtn = document.querySelector('.hundreths');
+const reset = document.querySelector('.rst')
 
 tens.innerText = 0;
 seconds.innerText = 0;
 tenth.innerText = 0;
 hundreths.innerText = 0;
 
-const addMin = () => tens.innerText = +(tens.innerText) === 9 ? 9 : +tens.innerText + 1
+const reseter = () => {
+    tens.innerText = 0;
+    seconds.innerText = 0;
+    tenth.innerText = 0;
+    hundreths.innerText = 0;
+}
+
+const addMin = () => tens.innerText = +tens.innerText === 9 ? 9 : +tens.innerText + 1;
+const addSec = () => seconds.innerText = +seconds.innerText === 9 ? 9 : +seconds.innerText + 1;
+const addTen = () => tenth.innerText = +tenth.innerText === 9 ? 9 : +tenth.innerText + 1;
+const addHun = () => hundred.innerText = +hundred.innerText === 9 ? 9 : +hundred.innerText + 1;
 
 minuteBtn.addEventListener('click', addMin);
+secondBtn.addEventListener('click', addSec);
+tenthsBtn.addEventListener('click', addTen);
+hundredBtn.addEventListener('click', addHun)
+reset.addEventListener('click', reseter);
 ///--------------------------------------------
 // function timer() {
 //     if(+tens.innerText === 1) {
