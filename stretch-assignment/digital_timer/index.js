@@ -1,16 +1,23 @@
 const tens = document.getElementById('secondTens');
 const seconds = document.getElementById('secondOnes');
-const tenths = document.getElementById('tenths');
-const hundreths = document.getElementById('hundreths');
+const tenth = document.getElementById('tenth');
+const hundreths = document.getElementById('hundred');
 const digits = document.querySelectorAll('.digit');
+// button grabbers
+const minuteBtn = document.querySelector('.minute');
+const secondBtn = document.querySelector('.second');
+const tenthsBtn = document.querySelector('.tenths');
+const hundredBtn = document.querySelector('.hundreths');
 
 tens.innerText = 0;
 seconds.innerText = 0;
 tenth.innerText = 0;
-hundred.innerText = 0;
+hundreths.innerText = 0;
 
+const addMin = () => tens.innerText = +(tens.innerText) === 9 ? 9 : +tens.innerText + 1
 
-
+minuteBtn.addEventListener('click', addMin);
+///--------------------------------------------
 // function timer() {
 //     if(+tens.innerText === 1) {
 //         hundreths.innerText = 0;    
