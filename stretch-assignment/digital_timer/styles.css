@@ -1,16 +1,80 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center; */
   background-color: black;
+  border: 1pt purple solid;
+  width: 800px;
+  height: 400px;
+  margin: 100px auto;
 }
 
-.digit {
-  display: inline-block;
+.digits {
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   font-size: 80px;
   color: rgb(5,70,5);
 }
 
-.redDigit {
-  color: rgb(218, 128, 26);
+.digit {
+  margin: 5px;  
+}
+#secondTens {
+  position: relative;
+  left: 22px;
+}
+#secondOnes {
+  position: relative;
+  left: 13px;
+}
+#tenth {
+  position: relative;
+  left: -9px;
+}
+#hundred {
+  position: relative;
+  left: -18px;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+.notReset {
+  display: flex;
+  margin: auto;
+}
+.btn {
+  width: 30px;
+  height: 20px;
+  margin: -5px 15px;
+  background: green;
+}
+.minute {
+  position: relative;
+  left: 18px;
+}
+.second {
+  position: relative;
+}
+.tenths {
+  position: relative;
+}
+.hundreths {
+  position: relative;
+  left: -18px;
+}
+.reset{
+  margin: 19px auto 0px;
+  width: 100px;
+  height: 35px;
+  background: red;
+  font-weight: bolder;
+  font-size: x-large;
+}
+.log {
+  background: purple;
+  color: rgb(255, 217, 0);
+  width: 175px;
+  margin-top: 8px;
 }
