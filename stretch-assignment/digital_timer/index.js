@@ -3,12 +3,12 @@ const seconds = document.getElementById('secondOnes');
 const tenth = document.getElementById('tenth');
 const hundreths = document.getElementById('hundred');
 const digits = document.querySelectorAll('.digit');
-// button grabbers
-const minuteBtn = document.querySelector('.minute');
-const secondBtn = document.querySelector('.second');
-const tenthsBtn = document.querySelector('.tenths');
-const hundredBtn = document.querySelector('.hundreths');
-const reset = document.querySelector('.rst')
+
+const resetBtn = document.querySelector('.reset')
+const logBtn = document.querySelector('.log')
+const logTimes = document.querySelector('.log-times')
+const startBtn = document.querySelector('.startBtn')
+const stopBtn = document.querySelector('.stopBtn')
 
 tens.innerText = 0;
 seconds.innerText = 0;
@@ -22,16 +22,34 @@ const reseter = () => {
     hundreths.innerText = 0;
 }
 
-const addMin = () => tens.innerText = +tens.innerText === 9 ? 9 : +tens.innerText + 1;
-const addSec = () => seconds.innerText = +seconds.innerText === 9 ? 9 : +seconds.innerText + 1;
-const addTen = () => tenth.innerText = +tenth.innerText === 9 ? 9 : +tenth.innerText + 1;
-const addHun = () => hundred.innerText = +hundred.innerText === 9 ? 9 : +hundred.innerText + 1;
+const timer = () => {
+    if (+seconds.innerText === 9 && +tenth.innerText === 9 && +hundreths.innerText === 9) {
+        tens.innerText = +tens.innerText === 9 ? 0 : +tens.innerText + 1;
+    }
+    if (+tenth.innerText === 9 && +hundreths.innerText === 9) {
+        // seconds.innerText = +seconds.innerText === 9 ? 0 : +seconds.innerText + 1;
+        seconds.innerText = +seconds.innerText === 9 ? 0 : +seconds.innerText + 1;
+    }
+    if (+hundreths.innerText === 9) {
+        tenth.innerText = +tenth.innerText === 9 ? 0 : +tenth.innerText + 1;
+    }
+    hundreths.innerText = +hundreths.innerText === 9 ? 0 : +hundreths.innerText + 1;
+}
 
-minuteBtn.addEventListener('click', addMin);
-secondBtn.addEventListener('click', addSec);
-tenthsBtn.addEventListener('click', addTen);
-hundredBtn.addEventListener('click', addHun)
-reset.addEventListener('click', reseter);
+// setInterval(timer, 100)
+var inter
+const start = (e) => {
+    inter = setInterval(timer, 10);
+}
+const stop = () => clearInterval(inter)
+
+startBtn.addEventListener('click', start);
+resetBtn.addEventListener('click', reseter);
+stopBtn.addEventListener('click', stop);
+//-------------------------------------------
+
+
+
 ///--------------------------------------------
 // function timer() {
 //     if(+tens.innerText === 1) {
@@ -55,15 +73,15 @@ reset.addEventListener('click', reseter);
 //     if (+seconds.innerText === 9 && +tenths.innerText === 9) {
 //         tens.innerText = +tens.innerText + 1;
 //     };
-
+//
 //     if (+tenths.innerText === 9 && +hundreths.innerText === 9) {
 //         seconds.innerText = +seconds.innerText + 1;
 //     };
-
+//
 //     if (+hundreths.innerText === 9) {
 //         tenths.innerText = +tenths.innerText === 9 ? 0 : +tenths.innerText + 1;
 //     };
-    
+//    
 //     hundreths.innerText = +hundreths.innerText === 9 ? 0 : +hundreths.innerText + 1;
 // }
 
