@@ -3,7 +3,6 @@ body {
   width: 800px;
   height: 400px;
   margin: 100px auto;
-  /* border: 1pt purple solid; */
 }
 
 .digits {
@@ -13,25 +12,29 @@ body {
   font-size: 80px;
   color: rgb(5,70,5);
 }
+#colon {
+  position: relative;
+  left: 9px;
+}
 
 .digit {
   margin: 5px;  
 }
 #secondTens {
   position: relative;
-  left: 22px;
+  left: 31px;
 }
 #secondOnes {
   position: relative;
-  left: 13px;
+  left: 22px;
 }
 #tenth {
   position: relative;
-  left: -9px;
+  left:0px;
 }
 #hundred {
   position: relative;
-  left: -18px;
+  left: -7px;
 }
 .buttons {
   display: flex;
@@ -72,6 +75,9 @@ body {
   font-size: 19px;  
   color: purple;
 }
+.lapBtn {
+  background: purple;
+}
 .start-stop {
   display: flex;
 }
@@ -82,4 +88,10 @@ body {
 }
 .startStop {
   width: 87.5px;
+}
+.faster {
+  color: green;
+}
+.slower {
+  color: red;
 }
