@@ -60,9 +60,6 @@ body {
   font-weight: bolder;
   font-size: x-large;
 }
-.lap {
-  background: purple;
-}
 .reset{
   background: red;
   color: black;
@@ -73,6 +70,7 @@ body {
 }
 .lap {
   font-size: 19px;  
+  color: purple;
 }
 .start-stop {
   display: flex;

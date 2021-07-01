@@ -5,10 +5,13 @@ const hundreths = document.getElementById('hundred');
 const digits = document.querySelectorAll('.digit');
 
 const resetBtn = document.querySelector('.reset')
-const logBtn = document.querySelector('.log')
-const logTimes = document.querySelector('.log-times')
+const lapBtn = document.querySelector('.lapBtn')
+const logTimes = document.querySelector('.times')
 const startBtn = document.querySelector('.startBtn')
 const stopBtn = document.querySelector('.stopBtn')
+
+var inter
+var i = 0;
 
 tens.innerText = 0;
 seconds.innerText = 0;
@@ -20,6 +23,8 @@ const reseter = () => {
     seconds.innerText = 0;
     tenth.innerText = 0;
     hundreths.innerText = 0;
+    logTimes.innerHTML = '';
+    i = 0;
 }
 
 const timer = () => {
@@ -27,7 +32,6 @@ const timer = () => {
         tens.innerText = +tens.innerText === 9 ? 0 : +tens.innerText + 1;
     }
     if (+tenth.innerText === 9 && +hundreths.innerText === 9) {
-        // seconds.innerText = +seconds.innerText === 9 ? 0 : +seconds.innerText + 1;
         seconds.innerText = +seconds.innerText === 9 ? 0 : +seconds.innerText + 1;
     }
     if (+hundreths.innerText === 9) {
@@ -35,17 +39,22 @@ const timer = () => {
     }
     hundreths.innerText = +hundreths.innerText === 9 ? 0 : +hundreths.innerText + 1;
 }
-
-// setInterval(timer, 100)
-var inter
-const start = (e) => {
-    inter = setInterval(timer, 10);
+const lapTimes = () => {
+    i += 1
+    let time = `${tens.innerText}${seconds.innerText}:${tenth.innerText}${hundreths.innerText}`
+    let lapTime = document.createElement('p');
+    lapTime.classList.add(`lap${i}`, `lap`);
+    logTimes.appendChild(lapTime);
+    lapTime.innerText = `Lap ${i}: ${time}`;
 }
+
+const start = () => inter = setInterval(timer, 10);
 const stop = () => clearInterval(inter)
 
 startBtn.addEventListener('click', start);
-resetBtn.addEventListener('click', reseter);
 stopBtn.addEventListener('click', stop);
+resetBtn.addEventListener('click', reseter);
+lapBtn.addEventListener('click', lapTimes)
 //-------------------------------------------
 
 
