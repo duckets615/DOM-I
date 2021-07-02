@@ -40,14 +40,23 @@ const timer = () => {
     }
     hundreths.innerText = +hundreths.innerText === 9 ? 0 : +hundreths.innerText + 1;
 };
+
+const timeDifference = (t1,t2) => {
+    const time1 = +(t1.slice(0,2)) * 60 + +t1.slice(3);
+    const time2 = +(t2.slice(0,2)) * 60 + +t2.slice(3);
+    return time2-time1 >= 0 ? `-${time2-time1}` : `+${time2-time1}` 
+  } 
+
 const lapTimes = () => {
-    i += 1
+    i += 1;
     let time = `${tens.innerText}${seconds.innerText}:${tenth.innerText}${hundreths.innerText}`
     let lapTime = document.createElement('p');
+    let prevLap = document.querySelector(`.lap${i-1}`);
     lapTime.classList.add(`lap${i}`, `lap`);
     logTimes.appendChild(lapTime);
-    lapTime.innerText = `Lap ${i}: ${time}`;
+    if (time !== '00:00') lapTime.innerText = `Lap ${i}: ${time}`
 };
+
 const start = () => {
     startBtn.disabled = true;
     inter = setInterval(timer, 10);
@@ -61,5 +70,7 @@ startBtn.addEventListener('click', start);
 stopBtn.addEventListener('click', stop);
 resetBtn.addEventListener('click', reseter);
 lapBtn.addEventListener('click', lapTimes);
-console.log(startBtn.attributes)
+
 //-------------------------------------------//
+
+// ${timeDifference(prevLap.innerText.slice(8,13)
